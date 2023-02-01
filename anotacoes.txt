@@ -1,0 +1,2 @@
+props -> São as propriedades que o componente recebe do label, passado na criação do componente, label ="...."
+
