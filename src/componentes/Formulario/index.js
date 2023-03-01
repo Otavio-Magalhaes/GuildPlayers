@@ -6,13 +6,6 @@ import './Formulario.css'
 
 const Formulario = (props) => {
 
-  
-    const boards = [
-        '',
-        'Yellow Fiver',
-        'Yellow Fresh'
-    ]
-
     const aoSalvar = (evento) => {
         evento.preventDefault()
         props.aoColaboradorCadastrado({
@@ -20,13 +13,13 @@ const Formulario = (props) => {
             cargo,
             imagem,
             classe,
-            board
+            
         })
         setNick('')
         setCargo('Habitante')
         setImagem('')
         setClasse('')
-        setBoard('')
+
 
     }
 
@@ -34,11 +27,7 @@ const Formulario = (props) => {
     const [cargo,setCargo] = useState('Habitante')
     const [imagem,setImagem] = useState('')
     const [classe,setClasse] = useState('')
-    const [board,setBoard] = useState('')
-
-
-
-
+ 
 
 
     return (
@@ -76,15 +65,6 @@ const Formulario = (props) => {
                     valor = {classe}
                     aoAlterado = { valor => setClasse(valor)}
                 
-                />
-
-
-                <ListaSuspensa 
-                    obrigatorio={true} 
-                    label = "Board" 
-                    itens = {boards}
-                    valor = {board}
-                    aoAlterado = {valor => setBoard(valor)}
                 />
 
                 <Botao>

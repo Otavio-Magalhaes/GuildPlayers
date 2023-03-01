@@ -73,13 +73,14 @@ function App() {
       <Banner />
      <Formulario nomeDasclasses={classes.map(classe => classe.nome)} aoColaboradorCadastrado={ colaborador => aoNovoColaboradorAdicionado(colaborador)}/>
 
-    {classes.map(classe => 
+    {classes.map((classe, indice) => 
       <Classe 
-        key={classe.nome} 
+        key={indice} 
         nome={classe.nome} 
         corPrimaria = {classe.corPrimaria}  
         corSecundaria = {classe.corSecundaria}
         colaboradores = {colaboradores.filter(colaborador => colaborador.classe === classe.nome)}
+       
       />)
     }
   

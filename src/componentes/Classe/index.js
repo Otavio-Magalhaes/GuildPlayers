@@ -1,20 +1,19 @@
 import Colaborador from '../Colaborador'
 import './Classe.css'
 
-const Classe = (props) =>{
+const Classe = ({classe,colaboradores, aoDeletar}) =>{
     
-    const corPrimaria = props.corPrimaria
-    const corSecundaria = props.corSecundaria
     
     return(
-        
-        (props.colaboradores.length > 0) && <section className='time' style={{backgroundColor: corSecundaria }}>
-            <h3 style={{borderColor: corPrimaria}}> {props.nome} </h3>
+        (colaboradores.length > 0) && <section className='time' style={{backgroundColor: classe.corSecundaria }}>
+            <h3 style={{borderColor: classe.corPrimaria}}> {classe.nome} </h3>
             <div className='players'>
-            {props.colaboradores.map(colaborador => <Colaborador key={colaborador.nick} corDeFundo={corPrimaria} nick={colaborador.nick} cargo={colaborador.cargo} imagem = {colaborador.imagem} board ={colaborador.board}/>)}
+            {colaboradores.map(colaborador => {
+                return <Colaborador key={colaborador.nick} corDeFundo={classe.corPrimaria} nick={colaborador.nick} cargo={colaborador.cargo} imagem = {colaborador.imagem} board ={colaborador.board} aoDeletar={aoDeletar} />
+            })}
             </div>
         </section>
-    )
+    )   
 }
 
 
